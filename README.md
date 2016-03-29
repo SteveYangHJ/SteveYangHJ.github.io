@@ -66,3 +66,28 @@ SteveYangHJ.github.io
 ### 特殊字符处理
 有一些特殊字符如<,#等,只要在特殊字符前面加上转义字符\即可<br />
 你想换行的话其实可以直接用html标签\<br /\>
+
+### 显示表格问题
+| 特性 | Maven中央仓库 | EBR |
+| ---- | ---- | ---: |
+| OSGi 兼容性| 不明确 | Yes |
+| 工件数量 | 成千上万，所有类型 | 几百个，只有那些Spring集成的 |
+| 一致的命名约定| No | Yes |
+| 命名约定：GroupId | 多种多样。新的工件使用域名，比如org.slf4j。旧的经常仅仅使用工件名称，如：log4j | 原始域名或主要包的根路径，如：org.springframework |
+| 命名约定：ArtifactId | 多种多样。通常通常是项目或模块名称，使用连字符“-”分隔符，如：spring-core | Bundle符号名，从主包根路径派生，如：org.springframework.beans。如果jar必须被修补来确保OSGi兼容性，则会附加com.springsource，如：com.springsource.org.apache.log4j |
+| 命名约定：Version版本| 多种多样。许多新的工件使用m.m.m或者m.m.m.X(其中m=数字，X=文本)。旧的使用m.m。一些不是这两种情况的任何一种。定义了排序但是并不经常被依赖，所以不是严格可靠的 | OSGi版本号m.m.m.X，如：3.0.0.RC3。文本限定符对相同数值的版本进行排序 |
+| 发布| 通常通过远程同步（rsync）或者源代码控制更新。项目作者可以单独上传jars到JIRA。 | 手工的（由SpringSource处理JIRA） |
+| 质量保证| 依据规则。准确来讲，是作者的责任。 | 广泛的OSGi清单，Maven POM和Ivy元数据。Spring团队会解答QA |
+| 托管| Contegix. 由Sonatype资助了多个镜像 | SpringSource资助的S3 |
+| 搜索工具| 多种多样 | http://www.springsource.com/repository |
+| 与SpringSource工具的集成| 通过STS和Maven依赖管理集成| 通过STS广泛的集成Maven、Roo、CloudFoundry |
+
+| 特性 | Maven中央仓库 | EBR |
+| ---- | ----  | --- |
+| OSGi 兼容性| 不明确 | Yes |
+| 工件数量 | 成千上万，所有类型 | 几百个，只有那些Spring集成的 |
+| 一致的命名约定| No | Yes |
+| 质量保证| 依据规则。准确来讲，是作者的责任。 | 广泛的OSGi清单，Maven POM和Ivy元数据。Spring团队会解答QA |
+| 托管| Contegix. 由Sonatype资助了多个镜像 | SpringSource资助的S3 |
+| 搜索工具| 多种多样 | http://www.springsource.com/repository |
+| 与SpringSource工具的集成| 通过STS和Maven依赖管理集成| 通过STS广泛的集成Maven、Roo、CloudFoundry |
